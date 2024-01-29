@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/lib/prisma": ["lib/prisma.ts"]
+    },
     "lib": [
       "dom",
       "dom.iterable",

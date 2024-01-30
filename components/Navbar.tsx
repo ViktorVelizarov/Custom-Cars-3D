@@ -1,9 +1,6 @@
-"use client"
-
 import Link from 'next/link'
 import { SignInButton, SignOutButton } from './buttons'
 import AuthCheck from './AuthCheck'
-import React, { useState, useEffect, useRef } from 'react';
 
 export default function () {
     return (

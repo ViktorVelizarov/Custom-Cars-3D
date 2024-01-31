@@ -6,6 +6,7 @@ import { OrbitControls } from "@react-three/drei";
 import { TextureLoader } from 'three/src/loaders/TextureLoader'
 import { useLoader } from '@react-three/fiber';
 import Porsche from 'components/Porsche';
+import Nissan from 'components/Nissan';
 
 export default function App() {
 
@@ -16,17 +17,10 @@ export default function App() {
       <Canvas>
         <OrbitControls />
         <ambientLight intensity={0.5} />
-        <directionalLight position={[-2, 5, 2]} intensity={1} />
+        <directionalLight position={[-2, 5, 2]} intensity={1} castShadow/>
         <Suspense fallback={null}>
-        <mesh rotation={[90, 0, 20]}>
-            <boxGeometry attach="geometry" args={[3, 3, 3]} />
-            <meshStandardMaterial
-              attach="material"
-              map={galaxyTexture}
-      
-            />
-          </mesh>
-          <Porsche />
+
+          <Nissan />
         </Suspense>
       </Canvas>
     </div>

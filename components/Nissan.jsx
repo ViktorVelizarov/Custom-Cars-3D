@@ -56,9 +56,9 @@ function Model(props) {
         <mesh geometry={nodes.Object_25.geometry} material={materials.wood} />
         <mesh geometry={nodes.Object_26.geometry} material={materials['Material.000']} />
         <mesh geometry={nodes.Object_27.geometry} material={materials.NODAMAGE_LOD0} />
-        <mesh geometry={nodes.Object_28.geometry} material={materials.black} />
-        <mesh geometry={nodes.Object_29.geometry} material={materials.body} />
-        <mesh geometry={nodes.Object_30.geometry} material={materials.body} />
+        <mesh geometry={nodes.Object_28.geometry} material={materials.black}/>
+        <mesh geometry={nodes.Object_29.geometry} material={materials.body} material-color={props.customColors.body}/>
+        <mesh geometry={nodes.Object_30.geometry} material={materials.body} material-color={props.customColors.body}/>
         <mesh geometry={nodes.Object_31.geometry} material={materials.bottom} />
         <mesh geometry={nodes.Object_32.geometry} material={materials.chrome} />
         <mesh geometry={nodes.Object_33.geometry} material={materials.digital_gauge} />

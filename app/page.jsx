@@ -5,14 +5,13 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { TextureLoader } from 'three/src/loaders/TextureLoader'
 import { useLoader } from '@react-three/fiber';
-import Porsche from 'components/Porsche';
-import Model from 'components/Nissan';
+import Model from 'components/Dodge';
 
 export default function App() {
 
   const [bodyColor,setBodyColor] = useState("#ffffff")
-  const [stripes,setStripes] = useState("#ffffff")
-  const [soul,setSoul] = useState("#ffffff")
+  const [accesoriesColor,setAccesoriesColor] = useState("#ffffff")
+  const [rimsColor,setRimsColor] = useState("#ffffff")
   
   const galaxyTexture = useLoader(TextureLoader, "/galaxyMaterial.png");
   return (
@@ -24,7 +23,7 @@ export default function App() {
         <directionalLight position={[-2, 5, 2]} intensity={1} castShadow/>
         <Suspense fallback={null}>
 
-          <Model customColors={{body: bodyColor, spoiler: "white"}}/>
+          <Model customColors={{body: bodyColor, accesoriesColor: accesoriesColor, rimsColor: rimsColor}}/>
         </Suspense>
       </Canvas>
     </div>
@@ -34,6 +33,16 @@ export default function App() {
       onChange={(e) => setBodyColor(e.target.value)}>
     </input>
     <label for="bodyColor"> Body</label>
+
+    <input type="color" id="accesoriesColor" name="accesoriesColor"  value={accesoriesColor} 
+      onChange={(e) => setAccesoriesColor(e.target.value)}>
+    </input>
+    <label for="bodyColor"> Accesories</label>
+
+    <input type="color" id="rimsColor" name="rimsColor"  value={rimsColor} 
+      onChange={(e) => setRimsColor(e.target.value)}>
+    </input>
+    <label for="rimsColor"> Rims</label>
     </>
   );
 }

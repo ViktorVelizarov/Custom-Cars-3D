@@ -27,15 +27,15 @@ function Model(props) {
             <mesh geometry={nodes.Object_94.geometry} material={materials.brakedisk} material-color={props.customColors.accesoriesColor}/>
             <mesh geometry={nodes.Object_95.geometry} material={materials.rim_second} material-color={props.customColors.rimsColor}/>
           </group>
-          <mesh geometry={nodes.Object_7.geometry} material={materials.material} rotation={[-Math.PI / 2, 0, 0]} scale={0.025} material-color={"white"}/>
+          <mesh geometry={nodes.Object_7.geometry} material={materials.material} rotation={[-Math.PI / 2, 0, 0]} scale={0.025} material-color={"black"}/>
           <mesh geometry={nodes.Object_9.geometry} material={materials.black} rotation={[-Math.PI / 2, 0, 0]} scale={0.025} material-color={props.customColors.accesoriesColor}/>
           <mesh geometry={nodes.Object_11.geometry} material={materials.clearglass} rotation={[-Math.PI / 2, 0, 0]} scale={0.025} />
           <mesh geometry={nodes.Object_13.geometry} material={materials.GLASS} rotation={[-Math.PI / 2, 0, 0]} scale={0.025} />
           <mesh geometry={nodes.Object_15.geometry} material={materials.GLASS} rotation={[-Math.PI / 2, 0, 0]} scale={0.025} />
           <mesh geometry={nodes.Object_17.geometry} material={materials.clearglass} rotation={[-Math.PI / 2, 0, 0]} scale={0.025}  />
-          <mesh geometry={nodes.Object_19.geometry} material={materials.material} rotation={[-Math.PI / 2, 0, 0]} scale={0.025} material-color={"white"}/>
+          <mesh geometry={nodes.Object_19.geometry} material={materials.material} rotation={[-Math.PI / 2, 0, 0]} scale={0.025} material-color={"black"}/>
           <mesh geometry={nodes.Object_21.geometry} material={materials.black} rotation={[-Math.PI / 2, 0, 0]} scale={0.025} material-color={"black"}/>
-          <mesh geometry={nodes.Object_23.geometry} material={materials.material} rotation={[-Math.PI / 2, 0, 0]} scale={0.025} material-color={"white"}/>
+          <mesh geometry={nodes.Object_23.geometry} material={materials.material} rotation={[-Math.PI / 2, 0, 0]} scale={0.025} material-color={"black"}/>
           <mesh geometry={nodes.Object_25.geometry} material={materials.black} rotation={[-Math.PI / 2, 0, 0]} scale={0.025} material-color={"black"}/>
           <mesh geometry={nodes.Object_27.geometry} material={materials.mirror} rotation={[-Math.PI / 2, 0, 0]} scale={0.025} material-color={"red"}/>
           <mesh geometry={nodes.Object_29.geometry} material={materials.black} rotation={[-Math.PI / 2, 0, 0]} scale={0.025} material-color={"black"}/>
@@ -57,7 +57,7 @@ function Model(props) {
           <mesh geometry={nodes.Object_61.geometry} material={materials.black} rotation={[-Math.PI / 2, 0, 0]} scale={0.025}/>
           <mesh geometry={nodes.Object_63.geometry} material={materials.black} rotation={[-Math.PI / 2, 0, 0]} scale={0.025}/>
           <mesh geometry={nodes.Object_65.geometry} material={materials.black} rotation={[-Math.PI / 2, 0, 0]} scale={0.025}/>
-          <mesh geometry={nodes.Object_67.geometry} material={materials.carpaint_second} rotation={[-Math.PI / 2, 0, 0]} scale={0.025} material-color={props.customColors.accesoriesColor}s/>
+          <mesh geometry={nodes.Object_67.geometry} material={materials.carpaint_second} rotation={[-Math.PI / 2, 0, 0]} scale={0.025} material-color={props.customColors.accesoriesColor}/>
           <mesh geometry={nodes.Object_69.geometry} material={materials.GLSS} rotation={[-Math.PI / 2, 0, 0]} scale={0.025} />
           <mesh geometry={nodes.Object_71.geometry} material={materials.black} rotation={[-Math.PI / 2, 0, 0]} scale={0.025} />
           <mesh geometry={nodes.Object_73.geometry} material={materials.clearglass} rotation={[-Math.PI / 2, 0, 0]} scale={0.025} />

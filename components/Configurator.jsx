@@ -3,22 +3,15 @@
 
 import React, {  useState } from "react";
 import { useCustomization } from "./Customization";
-import Link from 'next/link'
 
 export default function Configurator({ onBodyColorChange, onAccessoriesColorChange, onRimsColorChange,  onMaterialChange }) {
     const [bodyColor, setBodyColor] = useState("#ffffff");
     const [accessoriesColor, setAccessoriesColor] = useState("#ffffff");
     const [rimsColor, setRimsColor] = useState("#ffffff");
     const {material, setMaterial} = useCustomization();
-
-    const name1 = "John"; // Replace with your actual name
-    const number1 = "123456"; // Replace with your actual number
-    const url = `/cars/${"bobb"}`;
   return (
     <div className="fixed right-7 w-80 bottom-24 text-white p-4">
-        <a href={`/cars/${"beb"}`}>
-      Go to Cars with Parameters
-      </a>
+      
       <h2 className="font-sans font-bold text-lg">Color Chooser</h2>
       <div className="flex flex-col">
         <div className="flex flex-row mt-3">
@@ -67,18 +60,18 @@ export default function Configurator({ onBodyColorChange, onAccessoriesColorChan
       </div>
       <h2 className="font-sans font-bold text-lg mt-4">Car Wrap</h2>
       <div className="mt-3 flex flex-row">
-        <img onClick={()=> onMaterialChange("galaxyMaterial.png")} className="w-8 h-8  rounded-full  border-solid border-gray-700 mr-3" src="galaxyMaterial.png"></img>
-        <img onClick={()=> onMaterialChange("material1.png")} className="w-8 h-8  rounded-full  border-solid border-gray-700 mr-3" src="material1.png"></img>
-        <img onClick={()=> onMaterialChange("material2.jpg")} className="w-8 h-8  rounded-full  border-solid border-gray-700 mr-3" src="material2.jpg"></img>
-        <img onClick={()=> onMaterialChange("material3.jpg")} className="w-8 h-8  rounded-full  border-solid border-gray-700 mr-3" src="material3.jpg"></img>
-        <img onClick={()=> onMaterialChange("material4.jpg")} className="w-8 h-8  rounded-full  border-solid border-gray-700 mr-3" src="material4.jpg"></img>
+        <img onClick={()=> onMaterialChange("../galaxyMaterial.png")} className="w-8 h-8  rounded-full  border-solid border-gray-700 mr-3" src="../galaxyMaterial.png"></img>
+        <img onClick={()=> onMaterialChange("../material1.png")} className="w-8 h-8  rounded-full  border-solid border-gray-700 mr-3" src="../material1.png"></img>
+        <img onClick={()=> onMaterialChange("../material2.jpg")} className="w-8 h-8  rounded-full  border-solid border-gray-700 mr-3" src="../material2.jpg"></img>
+        <img onClick={()=> onMaterialChange("../material3.jpg")} className="w-8 h-8  rounded-full  border-solid border-gray-700 mr-3" src="../material3.jpg"></img>
+        <img onClick={()=> onMaterialChange("../material4.jpg")} className="w-8 h-8  rounded-full  border-solid border-gray-700 mr-3" src="../material4.jpg"></img>
       </div>
       <div className="mt-3 flex flex-row">
-        <img onClick={()=> onMaterialChange("material5.jpg")} className="w-8 h-8  rounded-full  border-solid border-gray-700 mr-3" src="material5.jpg"></img>
-        <img onClick={()=> onMaterialChange("material6.jpg")} className="w-8 h-8  rounded-full  border-solid border-gray-700 mr-3" src="material6.jpg"></img>
-        <img onClick={()=> onMaterialChange("material7.webp")} className="w-8 h-8  rounded-full  border-solid border-gray-700 mr-3" src="material7.webp"></img>
-        <img onClick={()=> onMaterialChange("material8.webp")} className="w-8 h-8  rounded-full  border-solid border-gray-700 mr-3" src="material8.webp"></img>
-        <img onClick={()=> onMaterialChange("material9.jpg")} className="w-8 h-8  rounded-full  border-solid border-gray-700 mr-3" src="material9.jpg"></img>
+        <img onClick={()=> onMaterialChange("../material5.jpg")} className="w-8 h-8  rounded-full  border-solid border-gray-700 mr-3" src="../material5.jpg"></img>
+        <img onClick={()=> onMaterialChange("../material6.jpg")} className="w-8 h-8  rounded-full  border-solid border-gray-700 mr-3" src="../material6.jpg"></img>
+        <img onClick={()=> onMaterialChange("../material7.webp")} className="w-8 h-8  rounded-full  border-solid border-gray-700 mr-3" src="../material7.webp"></img>
+        <img onClick={()=> onMaterialChange("../material8.webp")} className="w-8 h-8  rounded-full  border-solid border-gray-700 mr-3" src="../material8.webp"></img>
+        <img onClick={()=> onMaterialChange("../material9.jpg")} className="w-8 h-8  rounded-full  border-solid border-gray-700 mr-3" src="../material9.jpg"></img>
       </div>
       
     </div>

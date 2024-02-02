@@ -15,7 +15,8 @@ import * as THREE from 'three';
 
 function Model(props) {
   const { nodes, materials } = useGLTF('/mustang.gltf')
-  const galaxyTexture = useLoader(TextureLoader, "/material4.jpg");
+  if(props.material != "null"){
+  const galaxyTexture = useLoader(TextureLoader, props.material);
 
   // Create a new material for the car body with the galaxy texture
   const galaxyMaterial = React.useMemo(() => {
@@ -25,7 +26,8 @@ function Model(props) {
   }, [galaxyTexture]);
 
   // Replace the existing 'materials.body' with the new 'galaxyMaterial'
-  //materials.CARPAINT = galaxyMaterial;
+  materials.CARPAINT = galaxyMaterial;
+  }
   return (
     <group {...props} dispose={null}>
       <group rotation={[Math.PI / 2, 0, -Math.PI]} scale={0.01}>

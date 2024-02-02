@@ -23,7 +23,28 @@ function Page({ params }) {
   const [accessoriesColor, setAccessoriesColor] = useState("#ffffff");
   const [rimsColor, setRimsColor] = useState("#ffffff");
   const [material, setMaterial] = useState("null");
-
+  let heightNumber = 0;
+  if(params.name == "BmwM8"){
+    heightNumber = -0.45
+  }
+  if(params.name == "Benz1"){
+    heightNumber = -1.45
+  }
+  if(params.name == "Dodge"){
+    heightNumber = -0.65
+  }
+  if(params.name == "Nissan"){
+    heightNumber = -0.50
+  }
+  if(params.name == "Porsche"){
+    heightNumber = 0.1
+  }
+  if(params.name == "Mustang"){
+    heightNumber =  -0.5
+  }
+  if(params.name == "Mclaren720"){
+    heightNumber =  -0.60
+  }
   const handleBodyColorChange = (color) => {
     setBodyColor(color);
   };
@@ -57,7 +78,7 @@ function Page({ params }) {
             <Stage environment={"city"} intensity={0.6} contactShadow={false}>
               <Suspense fallback={null}>
                 <Model
-                  position={[0, 0.2, 0]}
+                  position={[0, heightNumber, 0]}
                   customColors={{
                     body: bodyColor,
                     accesoriesColor: accessoriesColor,

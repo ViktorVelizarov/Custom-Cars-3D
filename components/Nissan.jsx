@@ -15,18 +15,19 @@ import * as THREE from 'three';
 
 function Model(props) {
   const { nodes, materials } = useGLTF('/nissan.gltf')
-  const galaxyTexture = useLoader(TextureLoader, "/galaxyMaterial.png");
-
-   // Create a new material for the car body with the galaxy texture
-   const galaxyMaterial = React.useMemo(() => {
-    return new THREE.MeshBasicMaterial({
-      map: galaxyTexture,
-    });
-  }, [galaxyTexture]);
-
-  // Replace the existing 'materials.body' with the new 'galaxyMaterial'
-  materials.body = galaxyMaterial;
-
+  if(props.material != "null"){
+    const galaxyTexture = useLoader(TextureLoader, props.material);
+  
+    // Create a new material for the car body with the galaxy texture
+    const galaxyMaterial = React.useMemo(() => {
+      return new THREE.MeshBasicMaterial({
+        map: galaxyTexture,
+      });
+    }, [galaxyTexture]);
+  
+    // Replace the existing 'materials.body' with the new 'galaxyMaterial'
+    materials.body = galaxyMaterial;
+    }
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>

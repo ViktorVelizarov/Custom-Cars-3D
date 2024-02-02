@@ -13,44 +13,53 @@ export default function Configurator({ onBodyColorChange, onAccessoriesColorChan
     console.log('matrial:' ,material);
   return (
     <div className="fixed right-7 w-80 bottom-24 text-white p-4">
-      <h2 className="font-sans font-bold">Color Chooser</h2>
-      <input
-        type="color"
-        id="bodyColor"
-        name="bodyColor"
-        value={bodyColor}
-        onChange={(e) => {
-          setBodyColor(e.target.value)
-          onBodyColorChange(e.target.value);
-        }}
-      />
-      <label htmlFor="bodyColor"> Body</label>
+      <h2 className="font-sans font-bold text-lg">Color Chooser</h2>
+      <div className="flex flex-col">
+        <div className="flex flex-row mt-3">
+        
+        <input
+          type="color"
+          id="bodyColor"
+          name="bodyColor"
+          value={bodyColor}
+          onChange={(e) => {
+            setBodyColor(e.target.value)
+            onBodyColorChange(e.target.value);
+          }}
+        />
+        <label className="ml-4" htmlFor="bodyColor"> Body</label>
+        </div>
+        <div className="flex flex-row mt-3">
+        
+        <input
+          type="color"
+          id="accesoriesColor"
+          name="accesoriesColor"
+          value={accessoriesColor}
+          onChange={(e) => {
+            setAccessoriesColor(e.target.value)
+            onAccessoriesColorChange(e.target.value);
+          }}
+        />
+        <label className="ml-4" htmlFor="bodyColor"> Accessories</label>
+        </div>
+        <div className="flex flex-row mt-3">
+        
+        <input
+          type="color"
+          id="rimsColor"
+          name="rimsColor"
+          value={rimsColor}
+          onChange={(e) => {
+            setRimsColor(e.target.value)
+            onRimsColorChange(e.target.value);
+          }}
+        />
+        <label className="ml-4" htmlFor="rimsColor"> Rims</label>
+      </div>
 
-      <input
-        type="color"
-        id="accesoriesColor"
-        name="accesoriesColor"
-        value={accessoriesColor}
-        onChange={(e) => {
-          setAccessoriesColor(e.target.value)
-          onAccessoriesColorChange(e.target.value);
-        }}
-      />
-      <label htmlFor="bodyColor"> Accessories</label>
-
-      <input
-        type="color"
-        id="rimsColor"
-        name="rimsColor"
-        value={rimsColor}
-        onChange={(e) => {
-          setRimsColor(e.target.value)
-          onRimsColorChange(e.target.value);
-        }}
-      />
-      <label htmlFor="rimsColor"> Rims</label>
-
-      <h2 className="font-sans font-bold">Car Wrap</h2>
+      </div>
+      <h2 className="font-sans font-bold text-lg mt-4">Car Wrap</h2>
       <div className="mt-3 flex flex-row">
         <img onClick={()=> onMaterialChange("galaxyMaterial.png")} className="w-8 h-8  rounded-full  border-solid border-gray-700 mr-3" src="galaxyMaterial.png"></img>
         <img onClick={()=> onMaterialChange("material1.png")} className="w-8 h-8  rounded-full  border-solid border-gray-700 mr-3" src="material1.png"></img>

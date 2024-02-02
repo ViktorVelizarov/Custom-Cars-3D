@@ -11,16 +11,21 @@ import {
   Stage,
   MeshReflectorMaterial,
 } from "@react-three/drei";
+import { CustomizationProvider } from "components/Customization";
 
 export default function App() {
   const [bodyColor, setBodyColor] = useState("#ffffff");
   const [accessoriesColor, setAccessoriesColor] = useState("#ffffff");
   const [rimsColor, setRimsColor] = useState("#ffffff");
-
+  const [material, setMaterial] = useState("null");
   const galaxyTexture = useLoader(TextureLoader, "/galaxyMaterial.png");
 
   const handleBodyColorChange = (color) => {
     setBodyColor(color);
+  };
+
+  const handleMaterialChange = (newmaterial) => {
+    setMaterial(newmaterial);
   };
 
   const handleAccessoriesColorChange = (color) => {
@@ -32,11 +37,12 @@ export default function App() {
   };
 
   return (
+    <CustomizationProvider>
     <div className="h-screen">
       <Suspense fallback={null}>
         <Canvas>
-          <color attach="background" args={["#213547"]} />
-          <fog attach="fog" args={["#213547", 10, 30]} />
+          <color attach="background" args={["#101010"]} />
+          <fog attach="fog" args={["#101010", 10, 30]} />
 
           <PresentationControls
             speed={1.5}
@@ -53,6 +59,7 @@ export default function App() {
                     accesoriesColor: accessoriesColor,
                     rimsColor: rimsColor,
                   }}
+                  material= {material}
                 />
               </Suspense>
             </Stage>
@@ -77,8 +84,10 @@ export default function App() {
           onBodyColorChange={handleBodyColorChange}
           onAccessoriesColorChange={handleAccessoriesColorChange}
           onRimsColorChange={handleRimsColorChange}
+          onMaterialChange={handleMaterialChange}
         />
       </Suspense>
     </div>
+    </CustomizationProvider>
   );
 }

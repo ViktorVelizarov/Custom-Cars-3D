@@ -17,17 +17,20 @@ import { SSG_FALLBACK_EXPORT_ERROR } from 'next/dist/lib/constants';
 
  function Model(props) {
   const { nodes, materials } = useGLTF('/bmwM8.gltf')
-  const galaxyTexture = useLoader(TextureLoader, "/material9.jpg");
+  if(props.material != "null"){
+    const galaxyTexture = useLoader(TextureLoader, props.material);
 
-   // Create a new material for the car body with the galaxy texture
-   const galaxyMaterial = React.useMemo(() => {
-    return new THREE.MeshBasicMaterial({
-      map: galaxyTexture,
-    });
-  }, [galaxyTexture]);
-
-  // Replace the existing 'materials.body' with the new 'galaxyMaterial'
-  materials.BMW_M8RewardRecycled_2020Paint_Material = galaxyMaterial;
+    // Create a new material for the car body with the galaxy texture
+    const galaxyMaterial = React.useMemo(() => {
+     return new THREE.MeshBasicMaterial({
+       map: galaxyTexture,
+     });
+   }, [galaxyTexture]);
+ 
+   // Replace the existing 'materials.body' with the new 'galaxyMaterial'
+   materials.BMW_M8RewardRecycled_2020Paint_Material = galaxyMaterial;
+  }
+  
 
   return (
     <group {...props} dispose={null}>

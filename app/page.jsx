@@ -4,7 +4,7 @@ import React, { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { TextureLoader } from "three/src/loaders/TextureLoader";
 import { useLoader } from "@react-three/fiber";
-import Model from "components/Dodge";
+import Model from "components/Porsche";
 import Configurator from "components/Configurator";
 import {
   PresentationControls,
@@ -47,7 +47,7 @@ export default function App() {
             <Stage environment={"city"} intensity={0.6} contactShadow={false}>
               <Suspense fallback={null}>
                 <Model
-                  position={[0, -0.1, 0]}
+                  position={[0, 0.2, 0]}
                   customColors={{
                     body: bodyColor,
                     accesoriesColor: accessoriesColor,

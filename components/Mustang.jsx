@@ -9,9 +9,23 @@ Title: Ford Mustang 2015 EDITION
 
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
+import { TextureLoader } from 'three/src/loaders/TextureLoader'
+import { useLoader } from '@react-three/fiber';
+import * as THREE from 'three'; 
 
 function Model(props) {
   const { nodes, materials } = useGLTF('/mustang.gltf')
+  const galaxyTexture = useLoader(TextureLoader, "/material4.jpg");
+
+  // Create a new material for the car body with the galaxy texture
+  const galaxyMaterial = React.useMemo(() => {
+    return new THREE.MeshBasicMaterial({
+      map: galaxyTexture,
+    });
+  }, [galaxyTexture]);
+
+  // Replace the existing 'materials.body' with the new 'galaxyMaterial'
+  //materials.CARPAINT = galaxyMaterial;
   return (
     <group {...props} dispose={null}>
       <group rotation={[Math.PI / 2, 0, -Math.PI]} scale={0.01}>
@@ -19,8 +33,8 @@ function Model(props) {
         <mesh geometry={nodes.Object_5.geometry} material={materials.Black_Metal_Paint} />
       </group>
       <group rotation={[Math.PI / 2, 0, -Math.PI]} scale={0.01}>
-        <mesh geometry={nodes.Object_33.geometry} material={materials.CARPAINT} />
-        <mesh geometry={nodes.Object_34.geometry} material={materials.CARPAINT} />
+        <mesh geometry={nodes.Object_33.geometry} material={materials.CARPAINT} material-color={props.customColors.body}/>
+        <mesh geometry={nodes.Object_34.geometry} material={materials.CARPAINT} material-color={props.customColors.body}/>
       </group>
       <group rotation={[Math.PI / 2, 0, -Math.PI]} scale={0.01}>
         <mesh geometry={nodes.Object_46.geometry} material={materials.Black_Plastic} />

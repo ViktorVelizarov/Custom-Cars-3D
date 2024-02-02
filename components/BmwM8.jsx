@@ -12,10 +12,12 @@ import { useGLTF } from '@react-three/drei'
 import { TextureLoader } from 'three/src/loaders/TextureLoader'
 import { useLoader } from '@react-three/fiber';
 import * as THREE from 'three'; 
+import { ParsingToolFunction } from 'openai/lib/RunnableFunction';
+import { SSG_FALLBACK_EXPORT_ERROR } from 'next/dist/lib/constants';
 
  function Model(props) {
   const { nodes, materials } = useGLTF('/bmwM8.gltf')
-  const galaxyTexture = useLoader(TextureLoader, "/galaxyMaterial.png");
+  const galaxyTexture = useLoader(TextureLoader, "/material9.jpg");
 
    // Create a new material for the car body with the galaxy texture
    const galaxyMaterial = React.useMemo(() => {
@@ -25,21 +27,22 @@ import * as THREE from 'three';
   }, [galaxyTexture]);
 
   // Replace the existing 'materials.body' with the new 'galaxyMaterial'
-  //materials.body = galaxyMaterial;
+  materials.BMW_M8RewardRecycled_2020Paint_Material = galaxyMaterial;
+
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
-        <lineSegments geometry={nodes.Object_6.geometry} material={materials.BMW_M8RewardRecycled_2020Carbon1_Material}/>
-        <lineSegments geometry={nodes.Object_7.geometry} material={materials.BMW_M8RewardRecycled_2020Coloured_Material} />
+        <lineSegments geometry={nodes.Object_6.geometry} material={materials.BMW_M8RewardRecycled_2020Carbon1_Material}  material-color={props.customColors.accesoriesColor}/>
+        <lineSegments geometry={nodes.Object_7.geometry} material={materials.BMW_M8RewardRecycled_2020Coloured_Material}  material-color={props.customColors.accesoriesColor}/>
         <lineSegments geometry={nodes.Object_17.geometry} material={materials.BMW_M8RewardRecycled_2020Base_Material} material-color={"black"}/>
         <mesh geometry={nodes.Object_2.geometry} material={materials.BMW_M8RewardRecycled_2020BadgeB_Material} />
         <mesh geometry={nodes.Object_3.geometry} material={materials.BMW_M8RewardRecycled_2020LicensePlateDefaultA_Material} material-color={props.customColors.accesoriesColor}/>
         <mesh geometry={nodes.Object_4.geometry} material={materials.BMW_M8RewardRecycled_2020LightA_Material} />
         <mesh geometry={nodes.Object_5.geometry} material={materials.BMW_M8RewardRecycled_2020Base_Material} material-color={"black"}/>
-        <mesh geometry={nodes.Object_8.geometry} material={materials.BMW_M8RewardRecycled_2020Grille3A_Material} />
-        <mesh geometry={nodes.Object_9.geometry} material={materials.BMW_M8RewardRecycled_2020Grille4A_Material} />
-        <mesh geometry={nodes.Object_10.geometry} material={materials.BMW_M8RewardRecycled_2020Grille5A_Material} />
-        <mesh geometry={nodes.Object_11.geometry} material={materials.BMW_M8RewardRecycled_2020Grille6A_Material} />
+        <mesh geometry={nodes.Object_8.geometry} material={materials.BMW_M8RewardRecycled_2020Grille3A_Material}  material-color={props.customColors.accesoriesColor}/>
+        <mesh geometry={nodes.Object_9.geometry} material={materials.BMW_M8RewardRecycled_2020Grille4A_Material}  material-color={props.customColors.accesoriesColor}/>
+        <mesh geometry={nodes.Object_10.geometry} material={materials.BMW_M8RewardRecycled_2020Grille5A_Material}  material-color={props.customColors.accesoriesColor}/>
+        <mesh geometry={nodes.Object_11.geometry} material={materials.BMW_M8RewardRecycled_2020Grille6A_Material}  material-color={props.customColors.accesoriesColor}/>
         <mesh geometry={nodes.Object_12.geometry} material={materials.BMW_M8RewardRecycled_2020SeatBelt_Material} material-color={"black"}/>
         <mesh geometry={nodes.Object_13.geometry} material={materials.BMW_M8RewardRecycled_2020WindowInside_Material} />
         <mesh geometry={nodes.Object_14.geometry} material={materials.BMW_M8RewardRecycled_2020InteriorColourZoneA_Material} />
@@ -84,7 +87,7 @@ import * as THREE from 'three';
         <mesh geometry={nodes.Object_54.geometry} material={materials['rim.001']} material-color={props.customColors.accesoriesColor}/>
         <mesh geometry={nodes.Object_55.geometry} material={materials['rim.001']} material-color={props.customColors.accesoriesColor}/>
         <mesh geometry={nodes.Object_56.geometry} material={materials.rotor} />
-        <mesh geometry={nodes.Object_57.geometry} material={materials['tire.001']} />
+        <mesh geometry={nodes.Object_57.geometry} material={materials['tire.001']}  material-color={props.customColors.accesoriesColor}/>
       </group>
     </group>
   )

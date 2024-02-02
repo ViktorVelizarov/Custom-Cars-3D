@@ -9,8 +9,23 @@ Title: Merecedes AMG GT
 
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
+import { TextureLoader } from 'three/src/loaders/TextureLoader'
+import { useLoader } from '@react-three/fiber';
+import * as THREE from 'three'; 
+
  function Model(props) {
   const { nodes, materials } = useGLTF('/benz2.gltf')
+  const galaxyTexture = useLoader(TextureLoader, "/galaxyMaterial.png");
+
+  // Create a new material for the car body with the galaxy texture
+  const galaxyMaterial = React.useMemo(() => {
+    return new THREE.MeshBasicMaterial({
+      map: galaxyTexture,
+    });
+  }, [galaxyTexture]);
+
+  // Replace the existing 'materials.body' with the new 'galaxyMaterial'
+  materials.BODY2 = galaxyMaterial;
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={16.744}>

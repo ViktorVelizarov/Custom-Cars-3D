@@ -3,6 +3,7 @@
 
 import React, {  useState } from "react";
 import { useCustomization } from "./Customization";
+import Link from 'next/link'
 
 export default function Configurator({ onBodyColorChange, onAccessoriesColorChange, onRimsColorChange,  onMaterialChange }) {
     const [bodyColor, setBodyColor] = useState("#ffffff");
@@ -10,9 +11,14 @@ export default function Configurator({ onBodyColorChange, onAccessoriesColorChan
     const [rimsColor, setRimsColor] = useState("#ffffff");
     const {material, setMaterial} = useCustomization();
 
-    console.log('matrial:' ,material);
+    const name1 = "John"; // Replace with your actual name
+    const number1 = "123456"; // Replace with your actual number
+    const url = `/cars/${"bobb"}`;
   return (
     <div className="fixed right-7 w-80 bottom-24 text-white p-4">
+        <a href={`/cars/${"beb"}`}>
+      Go to Cars with Parameters
+      </a>
       <h2 className="font-sans font-bold text-lg">Color Chooser</h2>
       <div className="flex flex-col">
         <div className="flex flex-row mt-3">

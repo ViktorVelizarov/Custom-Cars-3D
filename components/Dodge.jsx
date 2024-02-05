@@ -9,9 +9,25 @@ Title: Dodge Challenger SRT DEMON SDC
 
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
+import { TextureLoader } from 'three/src/loaders/TextureLoader'
+import { useLoader } from '@react-three/fiber';
+import * as THREE from 'three';
 
 function Model(props) {
   const { nodes, materials } = useGLTF('/dodge.gltf')
+  if(props.material != "null"){
+    const galaxyTexture = useLoader(TextureLoader, props.material);
+  
+    // Create a new material for the car body with the galaxy texture
+    const galaxyMaterial = React.useMemo(() => {
+      return new THREE.MeshBasicMaterial({
+        map: galaxyTexture,
+      });
+    }, [galaxyTexture]);
+  
+    // Replace the existing 'materials.body' with the new 'galaxyMaterial'
+    materials.CARS = galaxyMaterial;
+    }
   return (
     <group {...props} dispose={null}>
       <group rotation={[-1.586, 0, 0]}>

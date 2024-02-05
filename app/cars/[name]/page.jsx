@@ -9,6 +9,7 @@ import { useLoader } from "@react-three/fiber";
 import Configurator from "components/Configurator";
 import {
   PresentationControls,
+  OrbitControls,
   Stage,
   MeshReflectorMaterial,
 } from "@react-three/drei";
@@ -45,6 +46,9 @@ function Page({ params }) {
   if(params.name == "Mclaren720"){
     heightNumber =  -0.60
   }
+  if(params.name == "BmwE34"){
+    heightNumber =  -0.50
+  }
   const handleBodyColorChange = (color) => {
     setBodyColor(color);
   };
@@ -61,20 +65,18 @@ function Page({ params }) {
     setRimsColor(color);
   };
 
+
+
   return (
     <CustomizationProvider>
     <div className="h-screen">
       <Suspense fallback={null}>
-        <Canvas>
+        <Canvas >
           <color attach="background" args={["#101010"]} />
           <fog attach="fog" args={["#101010", 10, 30]} />
 
-          <PresentationControls
-            speed={1.5}
-            global
-            zoom={0.6}
-            polar={[-0.1, Math.PI / 4]}
-          >
+          
+            <OrbitControls  maxPolarAngle={Math.PI / 2}/>
             <Stage environment={"city"} intensity={0.6} contactShadow={false}>
               <Suspense fallback={null}>
                 <Model
@@ -103,7 +105,7 @@ function Page({ params }) {
                 metalness={0.5}
               />
             </mesh>
-          </PresentationControls>
+
         </Canvas>
         <Configurator
           onBodyColorChange={handleBodyColorChange}

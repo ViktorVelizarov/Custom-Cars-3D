@@ -81,16 +81,16 @@ import { SSG_FALLBACK_EXPORT_ERROR } from 'next/dist/lib/constants';
         <mesh geometry={nodes.Object_45.geometry} material={materials.BMW_M8RewardRecycled_2020Window_Material} /> {/* windows*/}
         <mesh geometry={nodes.Object_46.geometry} material={materials['badge.001']} material-color={"yellow "}/>
         <mesh geometry={nodes.Object_47.geometry} material={materials.col2} material-color={"yellow "}/>
-        <mesh geometry={nodes.Object_48.geometry} material={materials['rim.001']} />
-        <mesh geometry={nodes.Object_49.geometry} material={materials['rim.001']} material-color={props.customColors.accesoriesColor}/>
-        <mesh geometry={nodes.Object_50.geometry} material={materials['rim.001']} material-color={props.customColors.accesoriesColor}/>
-        <mesh geometry={nodes.Object_51.geometry} material={materials['rim.001']} material-color={props.customColors.accesoriesColor}/>
-        <mesh geometry={nodes.Object_52.geometry} material={materials['rim.001']} material-color={props.customColors.accesoriesColor}/>
-        <mesh geometry={nodes.Object_53.geometry} material={materials['rim.001']} material-color={props.customColors.accesoriesColor}/>
-        <mesh geometry={nodes.Object_54.geometry} material={materials['rim.001']} material-color={props.customColors.accesoriesColor}/>
-        <mesh geometry={nodes.Object_55.geometry} material={materials['rim.001']} material-color={props.customColors.accesoriesColor}/>
-        <mesh geometry={nodes.Object_56.geometry} material={materials.rotor} />
-        <mesh geometry={nodes.Object_57.geometry} material={materials['tire.001']}  material-color={props.customColors.accesoriesColor}/>
+        <mesh geometry={nodes.Object_48.geometry} material={materials['rim.001']} material-color={props.customColors.rimsColor}/>
+        <mesh geometry={nodes.Object_49.geometry} material={materials['rim.001']} material-color={props.customColors.rimsColor}/>
+        <mesh geometry={nodes.Object_50.geometry} material={materials['rim.001']} material-color={props.customColors.rimsColor}/>
+        <mesh geometry={nodes.Object_51.geometry} material={materials['rim.001']} material-color={props.customColors.rimsColor}/>
+        <mesh geometry={nodes.Object_52.geometry} material={materials['rim.001']} material-color={props.customColors.rimsColor}/>
+        <mesh geometry={nodes.Object_53.geometry} material={materials['rim.001']} material-color={props.customColors.rimsColor}/>
+        <mesh geometry={nodes.Object_54.geometry} material={materials['rim.001']} material-color={props.customColors.rimsColor}/>
+        <mesh geometry={nodes.Object_55.geometry} material={materials['rim.001']} material-color={props.customColors.rimsColor}/>
+        <mesh geometry={nodes.Object_56.geometry} material={materials.rotor} material-color={props.customColors.rimsColor}/>
+        <mesh geometry={nodes.Object_57.geometry} material={materials['tire.001']}  material-color={props.customColors.rimsColor}/>
       </group>
     </group>
   )

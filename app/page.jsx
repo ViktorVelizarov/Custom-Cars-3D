@@ -32,7 +32,7 @@ export default function App() {
             <Stage environment={"city"} intensity={0.6} contactShadow={false}>
               <Suspense fallback={null}>
                 <Model
-                  position={[1, -0.5, 0]}
+                  position={[1, -0.48, 0]}
                   customColors={{
                     body: "red",
                     accesoriesColor: "red",
@@ -60,10 +60,10 @@ export default function App() {
         </Canvas>
                 
        
-        <div className="fixed left-16 w-96 bottom-56">
-        <h1 className="text-white text-7xl font-bold font-mono ml-44"> CustomCars3D</h1>
-            <p className="text-white ml-48 font-semibold font-mono mt-10"> Chose from our rich collection of car 3D  </p>
-            <p className="text-white ml-48 font-semibold font-mono "> models and customize them however you want.</p>
+        <div className="fixed left-56 w-96 bottom-64">
+        <h1 className="text-white text-7xl font-bold font-mono "> CustomCars3D</h1>
+            <p className="text-white  font-semibold font-mono mt-10"> Chose from our rich collection of car 3D  </p>
+            <p className="text-white  font-semibold font-mono "> models and customize them however you want.</p>
             </div>
      </Suspense>
     </div>

@@ -49,6 +49,9 @@ function Page({ params }) {
   if(params.name == "BmwE34"){
     heightNumber =  -0.50
   }
+  if(params.name == "Camaro"){
+    heightNumber =  0.10
+  }
   const handleBodyColorChange = (color) => {
     setBodyColor(color);
   };
@@ -70,7 +73,7 @@ function Page({ params }) {
   return (
     <CustomizationProvider>
     <div className="h-screen">
-      <Suspense fallback={null}>
+      <Suspense fallback={<div className="text-white text-5xl">Loading...</div>}>
         <Canvas >
           <color attach="background" args={["#101010"]} />
           <fog attach="fog" args={["#101010", 10, 30]} />
@@ -78,7 +81,7 @@ function Page({ params }) {
           
             <OrbitControls  maxPolarAngle={Math.PI / 2}/>
             <Stage environment={"city"} intensity={0.6} contactShadow={false}>
-              <Suspense fallback={null}>
+              <Suspense fallback={<div className="text-white text-5xl">Loading...</div>}>
                 <Model
                   position={[0, heightNumber, 0]}
                   customColors={{

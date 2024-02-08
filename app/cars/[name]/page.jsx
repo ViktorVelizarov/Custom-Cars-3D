@@ -24,6 +24,8 @@ function Page({ params }) {
   const [accessoriesColor, setAccessoriesColor] = useState("#ffffff");
   const [rimsColor, setRimsColor] = useState("#ffffff");
   const [material, setMaterial] = useState("null");
+  const [modelLoading, setModelLoading] = useState(true);
+  console.log(modelLoading)
   let heightNumber = 0;
   if(params.name == "BmwM8"){
     heightNumber = -0.45
@@ -81,7 +83,8 @@ function Page({ params }) {
           
             <OrbitControls  maxPolarAngle={Math.PI / 2}/>
             <Stage environment={"city"} intensity={0.6} contactShadow={false}>
-              <Suspense fallback={<div className="text-white text-5xl">Loading...</div>}>
+              <Suspense fallback={null}>
+               
                 <Model
                   position={[0, heightNumber, 0]}
                   customColors={{
@@ -90,6 +93,8 @@ function Page({ params }) {
                     rimsColor: rimsColor,
                   }}
                   material= {material}
+                  onCreated={(testt) => console.log("hi")} // Set modelLoading to false on model creation
+                  
                 />
               </Suspense>
             </Stage>
@@ -110,12 +115,14 @@ function Page({ params }) {
             </mesh>
 
         </Canvas>
+        
         <Configurator
           onBodyColorChange={handleBodyColorChange}
           onAccessoriesColorChange={handleAccessoriesColorChange}
           onRimsColorChange={handleRimsColorChange}
           onMaterialChange={handleMaterialChange}
         />
+       
       </Suspense>
     </div>
     </CustomizationProvider>

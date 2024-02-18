@@ -7,8 +7,8 @@ import {
   } from "@react-three/drei";
   import { Suspense, useEffect, useState } from "react";
 //   import { Car } from "./Car";
-//   import { Ground } from "./Ground";
-//   import { Track } from "./Track";
+  import { Ground } from "components/Ground";
+  import { Track } from "components/Track";
   
   export function Scene() {
     const [thirdPerson, setThirdPerson] = useState(false);
@@ -39,8 +39,10 @@ import {
           <OrbitControls target={[-2.64, -0.71, 0.03]} />
         )}
   
+         <Track />
+         <Ground />
         {/* <Ground />
-        <Track />
+        
         <Car thirdPerson={thirdPerson} /> */}
       </Suspense>
     );

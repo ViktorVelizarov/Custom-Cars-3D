@@ -6,7 +6,7 @@ import {
     PerspectiveCamera,
   } from "@react-three/drei";
   import { Suspense, useEffect, useState } from "react";
-//   import { Car } from "./Car";
+  import { Car } from "components/Car";
   import { Ground } from "components/Ground";
   import { Track } from "components/Track";
   
@@ -41,6 +41,7 @@ import {
   
          <Track />
          <Ground />
+         <Car/>
         {/* <Ground />
         
         <Car thirdPerson={thirdPerson} /> */}
